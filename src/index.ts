@@ -13,15 +13,9 @@ server.get('/', (request: Request, response: Response) => {
 
 server.get('/products', productController.getAllProducts)
 
+server.get('/products/:product_id', productController.getProductByID)
+
 server.post('/products', productController.createProduct)
 
-
 server.listen(5000, () => console.log('Servidor iniciado'))
-
-
-AppDataSource.initialize().then(async () => {
-    console.log("Data Source inicializado")
-    }).catch((error) => {
-        console.log(error)}
-)
 

@@ -16,6 +16,10 @@ export class ProductService {
         return products
     }
 
+    getProductByID = (product_id: string): Promise<Product | null> => {
+        return this.productRepository.getProductById(product_id)
+    }
+
     createProduct = async (
         name: string,
         code: string,

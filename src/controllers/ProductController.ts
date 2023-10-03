@@ -1,6 +1,5 @@
 import { Request, Response, response } from "express";
 import { ProductService } from "../services/ProductService";
-import { Product } from "../entities/Product";
 
 export class ProductController {
     productService: ProductService
@@ -14,6 +13,16 @@ export class ProductController {
     getAllProducts = async (request: Request, response: Response) => {
         const products = await this.productService.getAllProducts()
         return response.status(200).json(products)
+    }
+
+    getProductByID = async (request: Request, response: Response) => {
+        const { product_id } = request.params
+        const product = this.productService.getProductByID(product_id)
+        return response.status(200).json({
+            product_id: (await product).product_id,
+            name: (await product).name,
+            code: (await product).code
+        })
     }
 
     createProduct = (request: Request, response: Response) => {
