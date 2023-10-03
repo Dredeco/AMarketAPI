@@ -11,9 +11,9 @@ server.get('/', (request: Request, response: Response) => {
     return response.status(200).json({ message: 'A-Market API'})
 })
 
-server.get('/products', productController.getAllProducts)
+server.get('/products', productController.getAllProducts);
 
-server.post('/products', productController.createProduct)
+server.post('/products', productController.createProduct);
 
 
-server.listen(5000, () => console.log('Servidor iniciado'))
+server.listen(5000, () => console.log('Servidor iniciado'));
