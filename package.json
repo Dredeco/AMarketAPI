@@ -18,8 +18,8 @@
       "pg": "^8.4.0"
    },
    "scripts": {
-      "build": "rimraf ./build && tsc",
-      "start": "ts-node src/index.ts --watch",
+      "build": "tsc",
+      "start": "ts-node src/index.ts",
       "dev": "ts-node-dev src/index.ts",
       "test": "jest",
       "typeorm": "typeorm-ts-node-commonjs",
