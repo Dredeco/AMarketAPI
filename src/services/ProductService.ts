@@ -1,4 +1,4 @@
-import { AppDataSource } from "../database";
+import { AppDataSource } from "../data-source";
 import { Product } from "../entities/Product";
 import { ProductRepository } from "../repositories/ProductRepository";
 
