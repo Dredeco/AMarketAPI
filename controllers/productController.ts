@@ -57,5 +57,17 @@ export const productController = {
         } catch (error) {
             console.log(error)
         }
+    },
+
+    update:async (req: Request, res: Response) => {
+        try {
+            const id = req.params.id
+            const product = await productModel.findById(id)
+            const favorite = product.favorite
+
+            await productModel.findByIdAndUpdate(id, {favorite: !favorite})
+        } catch (error) {
+            console.log(`${error}`)
+        }
     }
 }

@@ -9,6 +9,10 @@ router
     .post((req: Request, res: Response) => productController.createProduct(req, res))
 
 router
+    .route("/products/:id")
+    .post((req: Request, res: Response) => productController.update(req, res))
+
+router
     .route("/products")
     .get((req: Request, res: Response) => productController.getAll(req, res))
 
